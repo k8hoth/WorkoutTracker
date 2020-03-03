@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.mongodb_uri || "mongodb://localhost/userdb",{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb",{
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
