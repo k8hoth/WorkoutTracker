@@ -20,7 +20,8 @@ router.post("/api/workouts", (req, res) => {
 });
 
 router.put("/api/workouts/:id", (req, res) => {
-    Workout.findByIdAndUpdate(req.params.id, { $push: {exercises: req.body} }, { new: true })
+    console.log("hit")
+    Workout.findByIdAndUpdate(req.params.id, { $push: {exercise: req.body} }, { new: true })
         .then(data => res.status(200).json(data))
         .catch(err => res.status(422).json(err))
 });
